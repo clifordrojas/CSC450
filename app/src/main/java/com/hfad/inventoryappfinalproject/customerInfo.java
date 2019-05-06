@@ -241,6 +241,59 @@ public class customerInfo extends AppCompatActivity {
         adapter.addAll(array);
     }
 
+    public void aggregate2(View view) {
+        adapter.clear();
+        int i;
+        String query =""
+                + "SELECT *, MIN(parts_price) AS \"Lowest price part\" "
+                + "FROM parts;";
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "Part number: "+ cursor.getString(0)
+                    +"\n Part name: "+ cursor.getString(1)
+                    +"\n Part price: "+ cursor.getString(3)
+
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
+    public void aggregate1(View view) {
+        adapter.clear();
+        int i;
+        String query =""
+                + "SELECT *, SUM(parts_price * parts_quantity) AS \"Parts above $10\" "
+                + "FROM parts "
+                + "GROUP BY parts_price "
+                + "HAVING SUM(parts_price) > 10;";
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "Part number: "+ cursor.getString(0)
+                    +"\n Part name: "+ cursor.getString(1)
+                    +"\n Part price: "+ cursor.getString(3)
+
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
+
     public void threeTableJoin(View view) {
         adapter.clear();
         int i;
