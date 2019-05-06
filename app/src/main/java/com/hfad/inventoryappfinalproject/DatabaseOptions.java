@@ -41,15 +41,15 @@ public class DatabaseOptions {
 
     //CUSTOMER INSERTS
     public static final String customer_insert1 =
-            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Cliford Rojas','3368482998','27263','rcw1468@uncw.edu')" ;
+            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Cliford Rojas','3368482998','27263','ckr9756@uncw.edu')" ;
     public static final String customer_insert2 =
-            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Magic Mike','1111111','28403','bmercer@uncw.edu')" ;
+            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Magic Mike','1111111','28403','megaman@uncw.edu')" ;
     public static final String customer_insert3 =
-            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Ms. Ferner','1234567','28403','snarayan@uncw.edu')" ;
+            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Ms. Ferner','1234567','28403','ferner@uncw.edu')" ;
     public static final String customer_insert4 =
-            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Naruto','4751522554','32808','alee@gmail.com')" ;
+            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Naruto','4751522554','32808','suaske@gmail.com')" ;
     public static final String customer_insert5 =
-            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Emiily','8878788978','33187','yasin@yahoo.com')" ;
+            "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Emiily','8878788978','33187','em@yahoo.com')" ;
     public static final String customer_insert6 =
             "INSERT or replace INTO " + CUSTOMERS_TABLE+ "(name, phonenum, zipcode, email) VALUES('Kira Martin','5793369965','32808','kmartin@uncw.edu')" ;
     public static final String customer_insert7 =

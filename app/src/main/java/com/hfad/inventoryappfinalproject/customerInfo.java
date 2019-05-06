@@ -171,7 +171,7 @@ public class customerInfo extends AppCompatActivity {
     public void averageCostParts(View view) {
         adapter.clear();
         int i;
-        String query = "SELECT * FROM Customers JOIN ORDERS on CUSTOMERS.id = ORDERS.customer_no;";
+        String query = "SELECT e_id,name,phonenum,email FROM Customers JOIN ORDERS on CUSTOMERS.id = ORDERS.customer_no ;";
         Cursor cursor = db.rawQuery(query, null);
 
         String array[] = new String[cursor.getCount()];
@@ -180,13 +180,58 @@ public class customerInfo extends AppCompatActivity {
 
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            array[i] = "Id: "+ cursor.getString(0)
+            array[i] = "Employee ID:: "+ cursor.getString(0)
                     +"\n Name: "+ cursor.getString(1)
                     +"\n Phonenum: "+ cursor.getString(2)
-                    +" \nzipcode: "+ cursor.getString(3)
-                    +" \nemail: "+ cursor.getString(4)
-                    +" \nodrdernum: "+ cursor.getString(5)
-                    +" \npartnum: "+ cursor.getString(6)
+                    +" \nEmail: "+ cursor.getString(3)
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
+
+    public void selfJoin(View view) {
+        adapter.clear();
+        int i;
+        String query = "SELECT c1.name, c2.name, c1.zipcode FROM customers c1 INNER JOIN customers c2 ON c2.zipcode = c1.zipcode WHERE  c1.id <> c2.id;";
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "Name 1:: "+ cursor.getString(0)
+                    +"\n Name 2: "+ cursor.getString(1)
+                    +"\n Zipcode: "+ cursor.getString(2)
+
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
+
+    public void likeOP(View view) {
+        adapter.clear();
+        int i;
+        String query = "SELECT * FROM parts WHERE parts_name LIKE \"%NA%\"";
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "Name 1:: "+ cursor.getString(0)
+                    +"\n Name 2: "+ cursor.getString(1)
+                    +"\n Zipcode: "+ cursor.getString(2)
+
             ;
             i++;
             cursor.moveToNext();

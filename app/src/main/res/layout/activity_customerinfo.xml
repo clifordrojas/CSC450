@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,130 +7,99 @@
     android:layout_height="match_parent"
     tools:context=".customerInfo">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/example_logo"
-        />
 
-    <Button
-        android:id="@+id/average_cost"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="23dp"
-        android:text="Average_cost_parts"
-        android:onClick="averageCostParts"
-        app:layout_constraintEnd_toStartOf="@+id/information"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/example_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/companyHeader"
-        android:onClick="onClickLogout"
-        />
+        <Button
+            android:id="@+id/average_cost"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="averageCostParts"
+            android:text="Join_CustomerID_OrderNum"
+            app:layout_constraintStart_toStartOf="@+id/button4"
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
 
-    <TextView
-        android:id="@+id/companyHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/companyName"
-        android:gravity="center"
-        android:textSize="50sp"
-        app:layout_constraintTop_toBottomOf="@id/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickLogout"
+            android:text="@string/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button1"
-        android:textSize="15sp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="10dp"
-        android:onClick="showEmployees"
-        app:layout_constraintTop_toBottomOf="@id/companyHeader"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showEmployees"
+            android:text="@string/button1"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="111dp"
-        android:layout_height="wrap_content"
-        android:text="@string/button2"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/button1"
-        app:layout_constraintTop_toBottomOf="@id/button1"
-        android:onClick="moveToCustomer"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:onClick="moveToCustomer"
+            android:text="@string/button2"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/button1"
+            app:layout_constraintTop_toBottomOf="@id/button1" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/button3"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        android:onClick="showOrders"/>
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="showOrders"
+            android:text="@string/button3"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/button7"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:onClick="showOrderDetails"/>
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:onClick="showOrderDetails"
+            android:text="@string/button7"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="97dp"
-        android:layout_height="wrap_content"
-        android:text="@string/button4"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
-        android:onClick="moveToCart"/>
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:onClick="moveToCart"
+            android:text="@string/button4"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/button7"
+            app:layout_constraintTop_toBottomOf="@+id/button7" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="102dp"
-        android:layout_height="47dp"
-        android:text="@string/button5"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        android:onClick="showParts"/>
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="102dp"
+            android:layout_height="47dp"
+            android:onClick="showParts"
+            android:text="@string/button5"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/button4"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/button6"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <!--<Button-->
+        <!--<Button-->
         <!--android:id="@+id/submitbutton"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -143,26 +113,46 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/information" />-->
 
-    <LinearLayout
-        android:id="@+id/information"
-        android:layout_width="294dp"
-        android:layout_height="397dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/button1"
-        app:layout_constraintTop_toTopOf="@id/button1">
+        <LinearLayout
+            android:id="@+id/information"
+            android:layout_width="294dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/button1"
+            app:layout_constraintTop_toTopOf="@id/button1">
 
-        <ListView
+                <ListView
+                    android:id="@+id/firstLineup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp">
+
+
+                </ListView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/selfJoin"
             android:layout_width="wrap_content"
-            android:layout_height="413dp"
-            android:id="@+id/firstLineup">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:onClick="selfJoin"
+            android:text="SelfJoin"
+            app:layout_constraintStart_toStartOf="@+id/average_cost"
+            app:layout_constraintTop_toBottomOf="@+id/average_cost" />
 
-
-
-        </ListView>
-    </LinearLayout>
-
+        <Button
+            android:id="@+id/LIKE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="13dp"
+            android:onClick="likeOP"
+            android:text="LIKEOP"
+            app:layout_constraintStart_toEndOf="@+id/button4"
+            app:layout_constraintTop_toBottomOf="@+id/information" />
 
 
 </android.support.constraint.ConstraintLayout>
