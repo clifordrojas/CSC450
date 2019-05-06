@@ -165,5 +165,16 @@
         app:layout_constraintStart_toEndOf="@+id/average_cost"
         app:layout_constraintTop_toBottomOf="@+id/LIKE" />
 
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:onClick="subQuery"
+        android:text="SubQuery"
+        app:layout_constraintStart_toEndOf="@+id/selfJoin"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
 
 </android.support.constraint.ConstraintLayout>

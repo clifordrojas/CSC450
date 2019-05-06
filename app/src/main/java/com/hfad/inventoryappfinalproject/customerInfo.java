@@ -228,9 +228,10 @@ public class customerInfo extends AppCompatActivity {
 
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            array[i] = "Name 1:: "+ cursor.getString(0)
-                    +"\n Name 2: "+ cursor.getString(1)
-                    +"\n Zipcode: "+ cursor.getString(2)
+            array[i] = "PartNum: "+ cursor.getString(0)
+                    +"\n PartName: "+ cursor.getString(1)
+                    +"\n Quantity: "+ cursor.getString(2)
+                    +"\n Price: "+ cursor.getString(3)
 
             ;
             i++;
@@ -258,14 +259,14 @@ public class customerInfo extends AppCompatActivity {
             array[i] = "id: "+ cursor.getString(0)
                     +"\n Name: "+ cursor.getString(1)
                     +"\n phoneNum: "+ cursor.getString(2)
-                    +"\n zipcode: "+ cursor.getString(2)
-                    +"\n email: "+ cursor.getString(2)
-                    +"\n orderNum: "+ cursor.getString(2)
-                    +"\n part_no: "+ cursor.getString(2)
-                    +"\n e_id: "+ cursor.getString(2)
-                    +"\n customer_no: "+ cursor.getString(2)
-                    +"\n username: "+ cursor.getString(2)
-                    +"\n password: "+ cursor.getString(2)
+                    +"\n zipcode: "+ cursor.getString(3)
+                    +"\n email: "+ cursor.getString(4)
+                    +"\n orderNum: "+ cursor.getString(5)
+                    +"\n part_no: "+ cursor.getString(6)
+                    +"\n e_id: "+ cursor.getString(7)
+                    +"\n customer_no: "+ cursor.getString(8)
+                    +"\n username: "+ cursor.getString(9)
+                    +"\n password: "+ cursor.getString(10)
 
             ;
             i++;
@@ -274,4 +275,36 @@ public class customerInfo extends AppCompatActivity {
 
         adapter.addAll(array);
     }
+    public void subQuery(View view) {
+        adapter.clear();
+        int i;
+        String query = "SELECT parts.parts_name,parts.parts_price,parts_quantity\n" +
+                "FROM parts \n" +
+                "WHERE parts.parts_number IN (SELECT orders.part_no\n" +
+                "\t\t\tFROM orders\n" +
+                "\t\t   WHERE parts.parts_price >= 500);";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "PartNum: "+ cursor.getString(0)
+                    +"\n PartsPrice: "+ cursor.getString(1)
+                    +"\n Quantity: "+ cursor.getString(2)
+
+
+
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
+
+
 }
