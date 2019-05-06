@@ -239,4 +239,39 @@ public class customerInfo extends AppCompatActivity {
 
         adapter.addAll(array);
     }
+
+    public void threeTableJoin(View view) {
+        adapter.clear();
+        int i;
+        String query = "SELECT CUSTOMERS.id, NAME, phonenum, zipcode,email, order_no,part_no,e_id,customer_no,username,password FROM customers\n" +
+                "JOIN (SELECT order_no, part_no,e_id,customer_no,id,username,password FROM orders JOIN employees ON e_id = e_id WHERE 1) as\n" +
+                "NEWTABLE ON customer_no = customers.id;";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        String array[] = new String[cursor.getCount()];
+
+        i = 0;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            array[i] = "id: "+ cursor.getString(0)
+                    +"\n Name: "+ cursor.getString(1)
+                    +"\n phoneNum: "+ cursor.getString(2)
+                    +"\n zipcode: "+ cursor.getString(2)
+                    +"\n email: "+ cursor.getString(2)
+                    +"\n orderNum: "+ cursor.getString(2)
+                    +"\n part_no: "+ cursor.getString(2)
+                    +"\n e_id: "+ cursor.getString(2)
+                    +"\n customer_no: "+ cursor.getString(2)
+                    +"\n username: "+ cursor.getString(2)
+                    +"\n password: "+ cursor.getString(2)
+
+            ;
+            i++;
+            cursor.moveToNext();
+        }
+
+        adapter.addAll(array);
+    }
 }
