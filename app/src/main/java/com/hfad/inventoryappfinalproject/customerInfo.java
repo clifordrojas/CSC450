@@ -269,11 +269,7 @@ public class customerInfo extends AppCompatActivity {
     public void aggregate1(View view) {
         adapter.clear();
         int i;
-        String query =""
-                + "SELECT *, SUM(parts_price * parts_quantity) AS \"Parts above $10\" "
-                + "FROM parts "
-                + "GROUP BY parts_price "
-                + "HAVING SUM(parts_price) > 10;";
+        String query ="SELECT *, MAX(order_no) AS zipcodess FROM orders GROUP BY e_id HAVING MAX(order_no)";
         Cursor cursor = db.rawQuery(query, null);
 
         String array[] = new String[cursor.getCount()];
