@@ -279,8 +279,8 @@ public class customerInfo extends AppCompatActivity {
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             array[i] = "Part number: "+ cursor.getString(0)
-                    +"\n Part name: "+ cursor.getString(1)
-                    +"\n Part price: "+ cursor.getString(3)
+                    +"\n Employee ID: "+ cursor.getString(1)
+
 
             ;
             i++;
